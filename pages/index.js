@@ -12,27 +12,23 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
-      <div className="absolute"></div>
-
-      <div className="absolute"></div>
-
       <div className="flex">
 
         <div className="">
-          <Image className="h-screen" src={bg} width="" height="" alt="alt" />
+          <Image className="" src={bg} width="" height="" alt="alt" />
         </div>
 
-        <div className="">
-          <form className="">
+        <div className="flex justify-center items-center w-full">
+          <form className="m-6">
 
             <div className="">
               <label className="block">CARDHOLDER NAME</label>
-              <input className="" type="text" placeholder="e.g. Jane Appleseed" />
+              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="e.g. Jane Appleseed" />
             </div>
 
             <div className="">
               <label className="block">CARD NUMBER</label>
-              <input className="" type="number" placeholder="e.g. 1234 5678 9123 0000" />
+              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="number" placeholder="e.g. 1234 5678 9123 0000" />
             </div>
 
             <div className="flex">
@@ -41,19 +37,19 @@ export default function Home() {
                 <label className="block">EXP. DATE (MM/YY)</label>
 
                 <div className="">
-                  <input className="" type="text" placeholder="MM" />
-                  <input className="" type="text" placeholder="YY" />
+                  <input className="mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="MM" />
+                  <input className="mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="YY" />
                 </div>
               </div>
 
               <div className="">
                 <label className="block">CVC</label>
-                <input className="" type="number" placeholder="e.g. 123" />
+                <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="number" placeholder="e.g. 123" />
               </div>
             </div>
 
-            <div className="">
-              <button className="">Confirm</button>
+            <div className="my-3">
+              <button className="text-white bg-[#21092F] rounded-md w-full py-2">Confirm</button>
             </div>
           </form>
         </div>
