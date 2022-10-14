@@ -4,7 +4,7 @@ import bg from "../images/bg-main-desktop.png"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen font-sg">
+    <div className="relative min-h-screen font-sg text-lg">
 
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,39 +12,39 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
-      <div className="flex">
+      <div className="flex h-screen">
 
-        <div className="">
-          <Image className="" src={bg} width="" height="" alt="alt" />
+        <div className="w-[35%] h-full relative">
+          <Image className="" src={bg} layout="fill" alt="alt" />
         </div>
 
-        <div className="flex justify-center items-center w-full">
-          <form className="m-6">
+        <div className="flex justify-center items-center mx-auto w-[28%]">
+          <form className="">
 
-            <div className="">
-              <label className="block">CARDHOLDER NAME</label>
-              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="e.g. Jane Appleseed" />
+            <div className="my-5">
+              <label className="block text[#21092F] my-2 text-base tracking-widest">CARDHOLDER NAME</label>
+              <input className="border-[1.5px] border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="text" placeholder="e.g. Jane Appleseed" />
             </div>
 
-            <div className="">
-              <label className="block">CARD NUMBER</label>
-              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="number" placeholder="e.g. 1234 5678 9123 0000" />
+            <div className="my-5">
+              <label className="block text[#21092F] my-2 text-base tracking-widest">CARD NUMBER</label>
+              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="number" placeholder="e.g. 1234 5678 9123 0000" />
             </div>
 
-            <div className="flex">
+            <div className="my-5 flex">
 
               <div className="">
-                <label className="block">EXP. DATE (MM/YY)</label>
+                <label className="block text[#21092F] my-2 text-base tracking-widest">EXP. DATE (MM/YY)</label>
 
                 <div className="">
-                  <input className="mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="MM" />
-                  <input className="mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[hsl(270, 3%, 87%)]" type="text" placeholder="YY" />
+                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[#8E8593]" type="text" placeholder="MM" />
+                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[#8E8593]" type="text" placeholder="YY" />
                 </div>
               </div>
 
-              <div className="">
-                <label className="block">CVC</label>
-                <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[hsl(270, 3%, 87%)]" type="number" placeholder="e.g. 123" />
+              <div className="w-full">
+                <label className="block text[#21092F] my-2 text-base tracking-widest">CVC</label>
+                <input className="w-full border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="number" placeholder="e.g. 123" />
               </div>
             </div>
 
