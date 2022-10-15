@@ -1,7 +1,7 @@
 import Image from "next/image"
 import bg from "../../images/bg-card-front.png"
 
-export default function Front(){
+export default function Front({ name, number, year, month}){
     return (
         <div className="relative w-[24rem] h-[13rem] rounded-lg shadow-2xl bg-[url('../images/bg-card-front.png')]">
             
@@ -11,12 +11,12 @@ export default function Front(){
             </div>
 
             <div className="py-5 px-4">
-                <div className="text-[26px] tracking-wider text-center text-white">0000 0000 0000 0000</div>
+                <div className="text-[26px] tracking-wider text-center text-white">{number ? number : "0000 0000 0000 0000"}</div>
             </div>
 
             <div className="px-8 text-white flex justify-between">
-                <div className="">Jane Appleseed</div>
-                <div className="">00/00</div>
+                <div className="">{name ? name : "Jane Appleseed"}</div>
+                <div className="">{month ? month : "00"}/{year ? year : "00"}</div>
             </div>
 
         </div>

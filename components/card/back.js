@@ -1,7 +1,7 @@
 import Image from "next/image";
 import skeleton from "../../images/skeleton.png";
 
-export default function Back() {
+export default function Back({cvc}) {
     return (
         <div className="relative w-[24rem] h-[13rem] rounded-lg shadow-2xl bg-gradient-to-tl from-[#d3d4d9] via-[#edecf0] to-[#ffffff]">
 
@@ -11,7 +11,7 @@ export default function Back() {
 
             <div className="">
                 <div className="bg-[#adb5bf] mx-10 rounded">
-                    <div className="px-4 py-1 text-right text-base text-white">000</div>
+                    <div className="px-4 py-1 text-right text-base text-white">{cvc ? cvc : "000"}</div>
                 </div>
             </div>
 
