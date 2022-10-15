@@ -1,5 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
+import Back from "../components/card/back"
+import Front from "../components/card/front"
 import bg from "../images/bg-main-desktop.png"
 
 export default function Home() {
@@ -8,12 +10,20 @@ export default function Home() {
 
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
-      <div className="flex h-screen">
 
+      <div className="absolute top-[18rem] left-[16rem] z-10">
+        <Front />
+      </div>
+
+      <div className="absolute z-10">
+        <Back />
+      </div>
+
+      <div className="flex h-screen">
         <div className="w-[35%] h-full relative">
           <Image className="" src={bg} layout="fill" alt="alt" />
         </div>
@@ -37,8 +47,8 @@ export default function Home() {
                 <label className="block text[#21092F] my-2 text-base tracking-widest">EXP. DATE (MM/YY)</label>
 
                 <div className="">
-                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[#8E8593]" type="text" placeholder="MM" />
-                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-1/5 placeholder:text-[#8E8593]" type="text" placeholder="YY" />
+                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 placeholder:text-[#8E8593]" type="text" placeholder="MM" />
+                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 placeholder:text-[#8E8593]" type="text" placeholder="YY" />
                 </div>
               </div>
 
