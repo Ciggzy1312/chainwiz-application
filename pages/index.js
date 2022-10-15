@@ -15,11 +15,11 @@ export default function Home() {
       </Head>
 
 
-      <div className="absolute top-[18rem] left-[16rem] z-10">
+      <div className="absolute top-[16rem] left-[16rem] z-10">
         <Front />
       </div>
 
-      <div className="absolute z-10">
+      <div className="absolute bottom-[18rem] left-[20rem] z-10">
         <Back />
       </div>
 

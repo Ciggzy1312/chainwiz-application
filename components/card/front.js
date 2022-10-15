@@ -3,10 +3,10 @@ import bg from "../../images/bg-card-front.png"
 
 export default function Front(){
     return (
-        <div className="relative w-[24rem] h-[13rem] rounded-lg bg-[url('../images/bg-card-front.png')]">
+        <div className="relative w-[24rem] h-[13rem] rounded-lg shadow-2xl bg-[url('../images/bg-card-front.png')]">
             
             <div className="flex items-center py-6 px-4">
-                <div className="w-11 h-11 rounded-full bg-white mx-4 z-10"></div>
+                <div className="w-11 h-11 rounded-full bg-white mx-4"></div>
                 <div className="w-5 h-5 rounded-full border border-white"></div>
             </div>
 
