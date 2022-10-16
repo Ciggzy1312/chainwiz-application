@@ -4,6 +4,7 @@ import Image from "next/image"
 import Back from "../components/card/back"
 import Front from "../components/card/front"
 import bg from "../images/bg-main-desktop.png"
+import Complete from "../images/icon-complete.svg"
 
 export default function Home() {
 
@@ -12,6 +13,8 @@ export default function Home() {
   const [month, setMonth] = useState("")
   const [year, setYear] = useState("")
   const [cvc, setCvc] = useState("")
+
+  const [success, setSuccess] = useState(false)
 
   const [errors, setErrors] = useState({})
 
@@ -80,6 +83,7 @@ export default function Home() {
     
     if(!errors.name && !errors.number && !errors.month && !errors.year && !errors.cvc) {
       console.log("Submitted")
+      setSuccess(true)
     }
   }
 
@@ -107,7 +111,16 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center mx-auto w-[28%]">
-          <form className="" onSubmit={handleErrors}>
+          {success ? <div className="w-full text-center">
+            <div className="my-10">
+              <svg className="mx-auto" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)" /><path d="M28 39.92 36.08 48l16-16" stroke="#fff" strokeWidth="3" /><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stopColor="#6348FE" /><stop offset="1" stop-color="#610595" /></linearGradient></defs></svg>
+            </div>
+
+            <div className="my-2 text-2xl text-[#21092F] text-center">THANK YOU</div>
+            <div className="text-[#8E8593] text-base">We have added your card details</div>
+
+            <div className="text-white text-center bg-[#21092F] rounded-md w-full mx-2 my-8 py-2">Continue</div>
+          </div> : <form className="" onSubmit={handleErrors}>
 
             <div className="my-5">
               <label className="block text[#21092F] my-2 text-base tracking-widest">CARDHOLDER NAME</label>
@@ -150,7 +163,7 @@ export default function Home() {
             <div className="my-3">
               <button className="text-white bg-[#21092F] rounded-md w-full py-2">Confirm</button>
             </div>
-          </form>
+          </form>}
         </div>
       </div>
     </div>

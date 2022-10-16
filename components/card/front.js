@@ -11,7 +11,7 @@ export default function Front({ name, number, year, month}){
             </div>
 
             <div className="py-5 px-4">
-                <div className="text-[26px] tracking-wider text-center text-white">{number ? number : "0000 0000 0000 0000"}</div>
+                <div className="mx-4 text-[26px] tracking-wider text-left text-white">{number ? number.substring(0, 4) + " " + number.substring(4, 8) + " " + number.substring(8, 12) + " " + number.substring(12, 16)  : "0000 0000 0000 0000"}</div>
             </div>
 
             <div className="px-8 text-white flex justify-between">
