@@ -13,6 +13,76 @@ export default function Home() {
   const [year, setYear] = useState("")
   const [cvc, setCvc] = useState("")
 
+  const [errors, setErrors] = useState({})
+
+  const errorValid = {
+    name,
+    number,
+    month,
+    year,
+    cvc,
+  }
+
+  const handleErrors = (e) => {
+
+    e.preventDefault()
+
+    const errors = {
+      name: "",
+      number: "",
+      month: "",
+      year: "",
+      cvc: "",
+    }
+
+    if(!errorValid.name) {
+      errors.name = "Can't be blank"
+    }
+
+    if(!errorValid.number) {
+      errors.number = "Can't be blank"
+    }
+    else if (isNaN(+errorValid.number)) {
+      errors.number = "Wrong format, must be a number"
+    }
+    else if(errorValid.number.length !== 16) {
+      errors.number = "Wrong format, must be 16 digits"
+    }
+
+    if(!errorValid.month) {
+      errors.month = "Can't be blank"
+    }
+    else if (isNaN(+errorValid.month)) {
+      errors.month = "Wrong format, must be a number"
+    }
+    else if(errorValid.month.length>12 || errorValid.month.length<1) {
+      errors.month = "Wrong format, must be between 1 and 12"
+    }
+
+    if(!errorValid.year) {
+      errors.year = "Can't be blank"
+    }
+    else if (isNaN(+errorValid.year)) {
+      errors.year = "Wrong format, must be a number"
+    }
+
+    if(!errorValid.cvc) {
+      errors.cvc = "Can't be blank"
+    }
+    else if (isNaN(+errorValid.cvc)) {
+      errors.cvc = "Wrong format, must be a number"
+    }
+    else if(errorValid.cvc.length !== 3) {
+      errors.cvc = "Wrong format, must be 3 digits"
+    }
+
+    setErrors(errors)
+    
+    if(!errors.name && !errors.number && !errors.month && !errors.year && !errors.cvc) {
+      console.log("Submitted")
+    }
+  }
+
   return (
     <div className="relative min-h-screen font-sg text-lg">
 
@@ -37,16 +107,18 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center mx-auto w-[28%]">
-          <form className="">
+          <form className="" onSubmit={handleErrors}>
 
             <div className="my-5">
               <label className="block text[#21092F] my-2 text-base tracking-widest">CARDHOLDER NAME</label>
-              <input className="border-[1.5px] border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="text" placeholder="e.g. Jane Appleseed" value={name} onChange={(e)=> setName(e.target.value)} />
+              <input className={`border-[1.5px] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593] focus:outline-none ${errors.name ? "border-[#FF5252]" : "border-[hsl(270, 3%, 87%)] focus:border-[#600594]"}`} type="text" placeholder="e.g. Jane Appleseed" value={name} onChange={(e)=> setName(e.target.value)} />
+              <p className="text-[#FF5252] text-xs py-1">{errors.name}</p>
             </div>
 
             <div className="my-5">
               <label className="block text[#21092F] my-2 text-base tracking-widest">CARD NUMBER</label>
-              <input className="border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="number" placeholder="e.g. 1234 5678 9123 0000" value={number} onChange={(e) => setNumber(e.target.value)} />
+              <input className={`border rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593] focus:outline-none ${errors.number ? "border-[#FF5252]" : "border-[hsl(270, 3%, 87%)] focus:border-[#600594]"}`} type="text" placeholder="e.g. 1234 5678 9123 0000" value={number} onChange={(e) => setNumber(e.target.value)} />
+              <p className="text-[#FF5252] text-xs py-1">{errors.number}</p>
             </div>
 
             <div className="my-5 flex">
@@ -54,15 +126,24 @@ export default function Home() {
               <div className="">
                 <label className="block text[#21092F] my-2 text-base tracking-widest">EXP. DATE (MM/YY)</label>
 
-                <div className="">
-                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 placeholder:text-[#8E8593]" type="text" placeholder="MM" value={month} onChange={(e) => setMonth(e.target.value)} />
-                  <input className="w-[40%] mr-2 border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 placeholder:text-[#8E8593]" type="text" placeholder="YY" value={year} onChange={(e) => setYear(e.target.value)} />
+                <div className="w-full flex">
+
+                  <div className="w-[50%] pr-2">
+                    <input className={`w-full border rounded-md px-4 py-1.5 placeholder:text-[#8E8593] focus:outline-none ${errors.month ? "border-[#FF5252]" : "border-[hsl(270, 3%, 87%)] focus:border-[#600594]"}`} type="text" placeholder="MM" value={month} onChange={(e) => setMonth(e.target.value)} />
+                    <p className="text-[#FF5252] text-xs py-1">{errors.month}</p>
+                  </div>
+
+                  <div className="w-[50%] pr-2 mr-2">
+                    <input className={`w-full border rounded-md px-4 py-1.5 placeholder:text-[#8E8593] focus:outline-none ${errors.year ? "border-[#FF5252]" : "border-[hsl(270, 3%, 87%)] focus:border-[#600594]"}`} type="text" placeholder="YY" value={year} onChange={(e) => setYear(e.target.value)} />
+                    <p className="text-[#FF5252] text-xs py-1">{errors.year}</p>
+                  </div>
                 </div>
               </div>
 
               <div className="w-full">
                 <label className="block text[#21092F] my-2 text-base tracking-widest">CVC</label>
-                <input className="w-full border border-[hsl(270, 3%, 87%)] rounded-md px-4 py-1.5 w-full placeholder:text-[#8E8593]" type="number" placeholder="e.g. 123" value={cvc} onChange={(e) => setCvc(e.target.value)} />
+                <input className={`w-full border rounded-md px-4 py-1.5 placeholder:text-[#8E8593] focus:outline-none ${errors.cvc ? "border-[#FF5252]" : "border-[hsl(270, 3%, 87%)] focus:border-[#600594]"}`} type="text" placeholder="e.g. 123" value={cvc} onChange={(e) => setCvc(e.target.value)} />
+                <p className="text-[#FF5252] text-xs py-1">{errors.cvc}</p>
               </div>
             </div>
 
