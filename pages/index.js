@@ -96,21 +96,20 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
       </Head>
 
-
-      <div className="absolute top-[16rem] left-[16rem] z-10">
-        <Front name={name} number={number} month={month} year={year} />
-      </div>
-
-      <div className="absolute bottom-[18rem] left-[20rem] z-10">
+      <div className="absolute bottom-[18rem] left-[16rem] z-10 md:top-[6rem] md:left-[20rem] sm:top-[6rem] sm:left-[16rem] xs:top-[4rem] xs:left-[12rem]  2xs:top-[4rem] 2xs:left-[12rem]">
         <Back cvc={cvc} />
       </div>
 
-      <div className="flex h-screen">
-        <div className="w-[35%] h-full relative">
+      <div className="absolute top-[16rem] left-[12rem] z-10 md:top-[14rem] md:left-[10rem] sm:top-[14rem] sm:left-[8rem] xs:top-[11rem] xs:left-[4rem] 2xs:top-[11rem] 2xs:left-[4rem]">
+        <Front name={name} number={number} month={month} year={year} />
+      </div>
+
+      <div className="flex h-screen md:flex-col sm:flex-col xs:flex-col 2xs:flex-col">
+        <div className="w-[35%] h-full relative md:w-full md:h-[40%] sm:w-full sm:h-[40%] xs:w-full xs:h-[35%] 2xs:w-full 2xs:h-[30%]">
           <Image className="" src={bg} layout="fill" alt="alt" />
         </div>
 
-        <div className="flex justify-center items-center mx-auto w-[28%]">
+        <div className="flex justify-center items-center mx-auto w-[28%] md:w-[60%] md:my-14 sm:w-[60%] sm:my-14 xs:w-[60%] xs:my-14  2xs:w-[80%] 2xs:my-24">
           {success ? <div className="w-full text-center">
             <div className="my-10">
               <svg className="mx-auto" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)" /><path d="M28 39.92 36.08 48l16-16" stroke="#fff" strokeWidth="3" /><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stopColor="#6348FE" /><stop offset="1" stop-color="#610595" /></linearGradient></defs></svg>
