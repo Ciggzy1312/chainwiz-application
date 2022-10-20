@@ -106,7 +106,8 @@ export default function Home() {
 
       <div className="flex h-screen md:flex-col sm:flex-col xs:flex-col 2xs:flex-col">
         <div className="w-[35%] h-full relative md:w-full md:h-[40%] sm:w-full sm:h-[40%] xs:w-full xs:h-[35%] 2xs:w-full 2xs:h-[30%]">
-          <Image className="" src={bg} layout="fill" alt="alt" />
+          <img className="" src={bg} layout="fill" alt="alt" />
+          
         </div>
 
         <div className="flex justify-center items-center mx-auto w-[28%] md:w-[60%] md:my-14 sm:w-[60%] sm:my-14 xs:w-[60%] xs:my-14  2xs:w-[80%] 2xs:my-24">
